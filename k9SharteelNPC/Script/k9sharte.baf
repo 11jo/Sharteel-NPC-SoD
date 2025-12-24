@@ -1,22 +1,28 @@
-IF Global("k9sharteelspawn","GLOBAL",0)    	!BeenInParty("Sharteel")
-
-THEN RESPONSE #100
-
-SetGlobal("k9sharteelspawn","GLOBAL",1)  Lock("Door06")	 SetGlobal("BD_SPAWN_Sharteel","BD0104",1)	CreateCreature("k9sharte",[1225.307],SE)   	CreateCreature("k9sodfis",[1272.400],SE)
-
+IF 
+	Global("k9sharteelspawn","GLOBAL",0)
+	!BeenInParty("Sharteel")
+THEN 
+	RESPONSE #100
+		SetGlobal("k9sharteelspawn","GLOBAL",1)
+		Lock("Door06")
+		SetGlobal("BD_SPAWN_Sharteel","BD0104",1)
+		CreateCreature("k9sharte",[1225.307],SE)
+		CreateCreature("k9sodfis",[1272.400],SE)
 END
 
 
-  IF
+IF
 	Global("BD_SPAWN_Sharteel","BD0104",0)
 	BeenInParty("Sharteel")
-
-THEN	RESPONSE #100
-		MoveGlobal("bd0104","sharteel",[1225.307])         Lock("Door06")		CreateCreature("k9sodfis",[1272.400],SE)
-		ApplySpellRES("bdresurr","sharteel") // No such index
+THEN
+	RESPONSE #100
+		MoveGlobal("bd0104","sharteel",[1225.307])
+		Lock("Door06")
+		CreateCreature("k9sodfis",[1272.400],SE)
+		ApplySpellRES("bdresurr","sharteel")
 		SmallWait(1)
 		ActionOverride("sharteel",Face(SE))
-		ApplySpellRES("bdrejuve","sharteel") // No such index
+		ApplySpellRES("bdrejuve","sharteel")
 		ChangeEnemyAlly("sharteel",NEUTRAL)
 		ChangeSpecifics("sharteel",ALLIES)
 		ActionOverride("sharteel",SetGlobal("bd_joined","locals",0))
@@ -32,9 +38,11 @@ THEN	RESPONSE #100
 		Continue()
 END
 
-
 IF
-Global("k9shar_unlock_door","GLOBAL",1)
-THEN RESPONSE #100
-Unlock("Door06")   OpenDoor("Door06")  SetGlobal("k9shar_unlock_door","GLOBAL",2)
+	Global("k9shar_unlock_door","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Unlock("Door06")
+		OpenDoor("Door06")
+		SetGlobal("k9shar_unlock_door","GLOBAL",2)
 END

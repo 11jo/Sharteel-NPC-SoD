@@ -47,5 +47,3 @@ END
 IF ~Global("k9Sharteel_Talk_LEVER_FREE","GLOBAL",1)~ THEN BEGIN 8
 SAY ~Such weakness! Why did you let those idiots go? We should have sprayed the walls with their blood. The story of their deaths would have been ours to concoct.~  IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk_LEVER_FREE","GLOBAL",2)~ EXIT
 END
-
-

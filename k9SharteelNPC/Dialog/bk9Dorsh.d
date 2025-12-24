@@ -1,5 +1,3 @@
-BEGIN bk9Dorsh
-
 CHAIN IF ~Global("k9SharteelDorn","GLOBAL",1)~ THEN BDDornj k9sharteelDorn1
 ~You hold your blade well, Shar-Teel.~
 DO ~SetGlobal("k9SharteelDorn","GLOBAL",2)~

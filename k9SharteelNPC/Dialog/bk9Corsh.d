@@ -1,5 +1,3 @@
-BEGIN bk9Corsh
-
 CHAIN IF ~Global("k9SharteelCorwin","GLOBAL",5)~ THEN BDCORWIJ k9sharteelCorwin3
 ~You're still here? Maybe the Fist will make a fine soldier out of you yet.~
 DO ~SetGlobal("k9SharteelCorwin","GLOBAL",6)~
@@ -11,4 +9,3 @@ DO ~SetGlobal("k9SharteelCorwin","GLOBAL",6)~
 = ~And *that* is why only a weak, cowering, fool trusts others to provide their protection.~
 == BDCORWIJ ~I've heard about enough from you for a lifetime. You really are a lost cause.~
 EXIT
-

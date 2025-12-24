@@ -58,5 +58,4 @@ SAY ~Ya? What ye be wantin? I reckon yer one of them homestickers wantin proof t
 +~!InParty("Sharteel") Global("k9NarlenTalk","GLOBAL",1)~+ ~Ye bunch of natty clapperdogeon couldn't run the game if ye had ten eyes and the stalks to match. Where be Alatos at? I have business with him.~  GOTO 2
 ++ ~Gods, how does anyone understand anything that comes out of that mouth of yours?~ GOTO 3
 ++ ~I'll be going now.~ EXIT
-
 END

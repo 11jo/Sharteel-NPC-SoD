@@ -1,18 +1,28 @@
 BACKUP ~k9SharteelNPC/Backup~
 AUTHOR ~elminster (elminster.sage@gmail.com)~
 
+// README ~k9SharteelNPC/~
 
-VERSION ~v1.4~
+VERSION ~v1.5~
+/*
+ALWAYS
+
+END // ALWAYS
+*/
+
+AUTO_TRA ~k9SHarteelNPC/tra/%s~
 
 LANGUAGE
-    ~English~                                                                           
-    ~English~
-    ~k9SHarteelNPC/tra/k9Setup.tra~
+		~English~
+		~English~
+		~k9SHarteelNPC/tra/English/k9Setup.tra~
 
+//Shar Teel
 
-
-    //Shar Teel
-  BEGIN @99971
+BEGIN @99971
+DESIGNATED 0
+LABEL ~k9SHarteel-SoD~
+REQUIRE_PREDICATE GAME_INCLUDES ~SoD~ ~This mod is for SoD~
 
 
 //creature files
@@ -23,92 +33,139 @@ COPY ~k9SHarteelNPC\CRE\k9sodfis.cre~ ~override~
 COPY ~k9SHarteelNPC\CRE\k9narlen.cre~ ~override~
 
 
- //scripts
-  EXTEND_TOP ~bd0020.bcs~ ~k9SHarteelNPC\script\k9narspa.baf~
- EXTEND_TOP ~bd0104.bcs~ ~k9SHarteelNPC\script\k9sharte.baf~
- EXTEND_TOP ~bdcut61.bcs~ ~k9SHarteelNPC\script\k9final2.baf~
-   COMPILE ~k9SHarteelNPC\script\k9shar.baf~
-  COMPILE ~k9SHarteelNPC\script\k9narlen.baf~
+//scripts
+		EXTEND_TOP ~bd0020.bcs~ ~k9SHarteelNPC\script\k9narspa.baf~
+		EXTEND_TOP ~bd0104.bcs~ ~k9SHarteelNPC\script\k9sharte.baf~
+		EXTEND_TOP ~bdcut61.bcs~ ~k9SHarteelNPC\script\k9final2.baf~
  
- 
- EXTEND_BOTTOM ~bdCORWIN.bcs~ ~k9SHarteelNPC\script\k9corsha.baf~
- EXTEND_BOTTOM ~bdDORN.bcs~ ~k9SHarteelNPC\script\k9dorsha.baf~
+	COMPILE ~k9SHarteelNPC\script\k9shar.baf~
+	COMPILE ~k9SHarteelNPC\script\k9narlen.baf~
+
+		EXTEND_BOTTOM ~bdCORWIN.bcs~ ~k9SHarteelNPC\script\k9corsha.baf~
+		EXTEND_BOTTOM ~bdDORN.bcs~ ~k9SHarteelNPC\script\k9dorsha.baf~
  
 
  //Dialog
- COMPILE ~k9SHarteelNPC\dialog\bdsharte.d~
- COMPILE ~k9SHarteelNPC\dialog\bdshartj.d~
- COMPILE ~k9SHarteelNPC\dialog\bdshartp.d~
- COMPILE ~k9SHarteelNPC\dialog\bk9shart.d~
- COMPILE ~k9SHarteelNPC\dialog\k9bdelta.d~
- COMPILE ~k9SHarteelNPC\dialog\k9sodfis.d~
- COMPILE ~k9SHarteelNPC\dialog\k9sodnar.d~
- COMPILE ~k9SHarteelNPC\dialog\bk9corsh.d~
- COMPILE ~k9SHarteelNPC\dialog\bk9dorsh.d~
+	COMPILE ~k9SHarteelNPC\dialog\bdsharte.d~
+	COMPILE ~k9SHarteelNPC\dialog\bdshartj.d~
+	COMPILE ~k9SHarteelNPC\dialog\bdshartp.d~
+	COMPILE ~k9SHarteelNPC\dialog\bbdshart.d~
+	COMPILE ~k9SHarteelNPC\dialog\bk9shart.d~
+	COMPILE ~k9SHarteelNPC\dialog\k9bdelta.d~
+	COMPILE ~k9SHarteelNPC\dialog\k9sodfis.d~
+	COMPILE ~k9SHarteelNPC\dialog\k9sodnar.d~
+	COMPILE ~k9SHarteelNPC\dialog\bk9corsh.d~
+	COMPILE ~k9SHarteelNPC\dialog\bk9dorsh.d~
 
- //stores
-
-
- 
- APPEND ~BDDIALOG.2da~
-~BDSHARTE             BDShartp         BDSharj~
-UNLESS ~SHART~
-
-APPEND ~Interdia.2da~
-~SHARTE              Bk9shart~
-UNLESS ~SHART~
-
-APPEND ~Interdia.2da~
-~BDEDWIN              BEdwin~
-UNLESS ~BDEDWI~
+//stores
 
 
+//DIALOG.2da
+	APPEND ~BDDIALOG.2da~ ~SHARTEEL           BDSHARTE           BDSHARTJ           SHARTD~ UNLESS ~SHARTEEL~
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~BDBANTER.2DA~) BEGIN
+
+	APPEND ~BDBANTER.2DA~ ~SHARTEEL           BDSHARTB~ UNLESS ~SHARTEEL~
+	APPEND ~BDBANTER.2DA~ ~EDWIN           BDEDWINB~ UNLESS ~EDWIN~
+
+END ELSE BEGIN // SoD does not ship with a BDBanter.2DA file, but does reference it (from CAMPAIGN.2DA), so create it (code adapted from EET implementation by K4thos) 
+
+<<<<<<<< .../k9-inlined/BDBANTER.2DA
+2DA      V1.0
+NONE
+		FILE
+EDWIN           BDEDWINB
+SHARTEEL        BDSHARTB
+>>>>>>>>
+
+	COPY ~.../k9-inlined/BDBANTER.2DA~ ~override~ // copy the in-lined (memory-only) file we defined above into the override folder (as a real file)
+
+END
 
 
-ADD_JOURNAL @665565 @665566 @665567 @665568 @665569 @665570 @665571 USING ~k9SHarteelNPC/tra/k9Setup.tra~
+// APPEND ~Interdia.2da~ ~SHARTEEL        BSHART~ UNLESS ~SHARTEEL~
+
+// APPEND ~Interdia.2da~ ~EDWIN           BEDWIN~ UNLESS ~EDWIN~
+
+
+
+
+ADD_JOURNAL TITLE (@665564) @665565 @665566 @665567 @665568 @665569 @665570 @665571 USING ~k9SHarteelNPC/tra/%s/k9Setup.tra~
 
 
 
 COPY_EXISTING ~BD0103.are~ ~override/BD0103.are~
-  PATCH_IF (SOURCE_SIZE > 0x11b) BEGIN  // checking for valid ARE resource
-   LPF fj_are_structure
-    INT_VAR
-    fj_type        = 5
-    fj_flags       = 6
-    fj_loc_x       = 940
-    fj_loc_y       = 685
-    fj_box_left    = 925
-    fj_box_top     = 610
-    fj_box_right   = 980
-    fj_box_bottom  = 650
-    fj_vertex_0    = 925 + (638 << 16)
-    fj_vertex_1    = 964 + (610 << 16)
-    fj_vertex_2    = 981 + (622 << 16)
-    fj_vertex_3    = 942 + (650 << 16)
-    STR_VAR
-    fj_structure_type = container
-    fj_name           = ~k9table~
-  END
-    LPF fj_are_structure
-    INT_VAR
-    fj_con_itm_idx    = SHORT_AT 0x74 - 1 // a new container will be last in the file
-    fj_flags          = 0 // identified
-    STR_VAR
-    fj_name           = k9eltlet
-    fj_structure_type = itm
-  END
+	PATCH_IF (SOURCE_SIZE > 0x11b) BEGIN  // checking for valid ARE resource
+		LPF fj_are_structure
+			INT_VAR
+			fj_type        = 5
+			fj_flags       = 6
+			fj_loc_x       = 940
+			fj_loc_y       = 685
+			fj_box_left    = 925
+			fj_box_top     = 610
+			fj_box_right   = 980
+			fj_box_bottom  = 650
+			fj_vertex_0    = 925 + (638 << 16)
+			fj_vertex_1    = 964 + (610 << 16)
+			fj_vertex_2    = 981 + (622 << 16)
+			fj_vertex_3    = 942 + (650 << 16)
+			STR_VAR
+			fj_structure_type = container
+			fj_name           = ~k9table~
+		END
+		LPF fj_are_structure
+			INT_VAR
+			fj_con_itm_idx    = SHORT_AT 0x74 - 1 // a new container will be last in the file
+			fj_flags          = 0 // identified
+			STR_VAR
+			fj_name           = k9eltlet
+			fj_structure_type = itm
+		END
+	END
 
-  END
+
+COPY ~k9SHarteelNPC\ITM\k9eltlet.itm~ ~override~
+	SAY NAME1 @99990122
+	SAY NAME2 @99990122
+	SAY UNIDENTIFIED_DESC  @99990123
+	SAY DESC @99990123
+
+COPY ~k9SHarteelNPC\ITM\k9eltle2.itm~ ~override~
+	SAY NAME1 @99990124
+	SAY NAME2 @99990124
+	SAY UNIDENTIFIED_DESC  @99990125
+	SAY DESC @99990125
 
 
-  COPY ~k9SHarteelNPC\ITM\k9eltlet.itm~ ~override~
-SAY NAME1 @99990122
-SAY NAME2 @99990122
-SAY UNIDENTIFIED_DESC  @99990123
-SAY DESC @99990123
-
-  COPY ~k9SHarteelNPC\ITM\k9eltle2.itm~ ~override~
-SAY NAME1 @99990124
-SAY NAME2 @99990124
-SAY UNIDENTIFIED_DESC  @99990125
-SAY DESC @99990125
+/* ------------- *
+ *  Fate Spirit  *
+ * ------------- */
+ 
+ACTION_IF  GAME_IS ~eet~ BEGIN
+	INCLUDE ~EET/other/EET_functions.tph~   // functions from EET mod
+	LAF ~EET_NPC_TRANSITION~
+		INT_VAR
+			type = 1						// NPC is summon-able if met before
+			default_ToB = 1					//controls if NPC should be spawnable in ToB when the game has been started in ToB (no by default - 0)
+			clean_ToB = 1				//cleans out existing EET code in FATESP.DLG, AR4000.BCS, AR4500.BCS for DV specified in clean_ToB_DV
+		STR_VAR
+			dv = "Sharteel"					// death variable of your NPC (must be the same in BG1/SoD/BG2/ToB)
+			override_BG1 = "SHARTEEL"		//name of the override NPC script in BG1
+			override_SoD = "K9SHAR"		//name of the override NPC script in SoD (use BG1 one if doesn't exist)
+			// override_SoA = ""		// override script of your NPC (SoA)
+			// override_ToB = "k9shar"		// override script of your NPC (ToB) //name of the override NPC script in ToB (use SoA one if doesn't exist)
+			// dialog_ToB = ""		// joining dialogue for ToB//name of the dialogue file used after spawning NPC in ToB (use SoA POST dialogue or initial SoA dialogue file if doesn't exist)
+			cre_ToB = "k9SHARTE"			//if type = 4 and/or default_ToB = 1 name of the ToB CRE file is needed (used to create new CRE rather than migrating existing one from SoA)
+//			traFile = EVAL "weidu_external/sbs/languages/autotra/%s/setup.tra"  //an optional TRA file that will be used for the TRA references defined in "string"
+			string = "~Bring me Shar-Teel, the fighter.~"					//FATESP summon text (example: "Bring me Quayle, the gnome cleric/illusionist.") or TRA string number
+			stringPosDV = "SharTeel"			//set the DV of NPC right below your response (used for sorting FATESP responses alphabetically)
+											//Aerie, Ajantis, Alora, Anomen, Baeloth, Branwen, Cernd, Coran, Corwin, Dorn, Dynaheir, Edwin, Eldoth, Faldorn, Garrick,
+											//Glint, HaerDalis, Hexxat, Imoen2, Jaheira, Jan, Kagain, Keldorn, Khalid, Kivan, Korgan, MKhiin, Mazzy, Minsc, Montaron,
+											//Nalia, Neera, Quayle, Rasaad, Safana, SharTeel, Skie, Tiax, Valygar, Viconia, Voghiln, Wilson, Xan, Xzar, Yeslick, Yoshimo
+											//variable not set (default) = NPC name appended at the end of summoning list
+			// SummonedVar = ""				//set it only if you want to use different var name than %dv%Summoned (useless in most cases)
+			// SpawnPlaneVar = ""			//set it only if you want use different var name than %dv%SpawnPlane (useless in most cases)
+			clean_ToB_DV = "Sharteel"			//if clean_ToB = 1 existing code for this DV will be removed from FATESP.DLG, AR4000.BCS, AR4500.BCS
+	END
+END

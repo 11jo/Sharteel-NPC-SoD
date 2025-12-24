@@ -49,5 +49,3 @@ IF ~~ THEN BEGIN 7
 SAY ~Right. Well unfortunately we sold it all off. Didn't really expect her to be needing it frankly. I do have some quality items she's welcome to. But it may not be what she was expecting.~ IF ~~ THEN DO ~GiveItemCreate("sw1h08",LastTalkedToBy,0,0,0) GiveItemCreate("sw1h07",LastTalkedToBy,0,0,0)  GiveItemCreate("helm01",LastTalkedToBy,0,0,0) GiveItemCreate("leat06",LastTalkedToBy,0,0,0) SetGlobal("k9Sharteel_Item_GIVE","GLOBAL",1) AddJournalEntry(@665571,QUEST)~ EXIT
 
 END
-
-

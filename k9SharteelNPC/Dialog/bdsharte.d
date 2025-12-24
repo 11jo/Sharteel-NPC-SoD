@@ -25,13 +25,10 @@ SAY ~Ahh <CHARNAME>, if ever there were a male clung to the Fist it would be you
 END
 
 
-
-
 IF ~~ THEN BEGIN 2
 
 SAY ~A quick and painful death. Is that not what an assassin is for?~ IF ~~ GOTO 20
 END
-
 
 
 IF ~~ THEN BEGIN 3
@@ -39,8 +36,6 @@ IF ~~ THEN BEGIN 3
 SAY ~Ahh <CHARNAME>, why am I not surprised to see you cowling before the Fist. Tell me, did the Fist inform you at all of my whereabouts? I thought not.~
 ++ ~If Duke Eltan knew your whereabouts he wasn't about to tell me. What crimes brought you here?~ GOTO 6
 END
-
-
 
 
 IF ~~ THEN BEGIN 4
@@ -61,8 +56,8 @@ SAY ~Crimes? There were no crimes. These dogs chained me here because I am the d
 ++ ~Well you were challenging men to combat. Perhaps you embarrassed the wrong person.~ GOTO 10
 END
 
-IF ~~ THEN BEGIN 7
 
+IF ~~ THEN BEGIN 7
 SAY ~Enough of these questions. What do you want with me?~ 
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ ~I'd like you to join my party~ GOTO 11
 ++ ~Nothing really. Just wanted to see who you were.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) ~ EXIT
@@ -70,8 +65,8 @@ SAY ~Enough of these questions. What do you want with me?~
 ++ ~I've seen enough here. I'll be going now.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
-IF ~~ THEN BEGIN 8
 
+IF ~~ THEN BEGIN 8
 SAY ~I do what needs to be done - something the Fist have never seemed to understand.~
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ ~That is precisely the reason I'd like you to join my party~ GOTO 11
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ ~I certainly have no taste for the Fist myself. They do seem to trust me however. Perhaps we can work together to undermine their efforts.~ GOTO 11
@@ -79,8 +74,8 @@ SAY ~I do what needs to be done - something the Fist have never seemed to unders
 ++ ~I've seen enough here. I'll be going now.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
-IF ~~ THEN BEGIN 9
 
+IF ~~ THEN BEGIN 9
 SAY ~I am the daughter of Angelo, one of the cohorts of Sarevok. These pigs have kept me here for weeks without cause. Rest assured, whatever lies the Fist have spread of me are false. This charade has been nothing more than guilt by blood.~
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ ~Strange as it may sound, I understand. Join my group and you can be free of this place.~ GOTO 11
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ ~I dislike the Fist as much as you. They seem to trust me however. Perhaps we can work together to undermine their efforts.~ GOTO 11
@@ -90,20 +85,18 @@ END
 
 
 IF ~~ THEN BEGIN 10
-
 SAY ~This town is full of princely little twats. I suppose I could have angered one of them.~
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ ~You waste your life away sitting in this cell. If you can stand the thought of working alongside the Fist come join my party.~ GOTO 11
 ++ ~I'll be going now.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
-IF ~~ THEN BEGIN 11
 
+IF ~~ THEN BEGIN 11
 SAY ~As much as it pains me to think of myself working alongside a moron like you it still beats the smell of this place. Fine, I'll join your little group.~ IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",2) SetGlobal("k9SharTeelPrison","GLOBAL",1) SetGlobal("SharTeelJoined","GLOBAL",1) JoinParty()~ EXIT
 END
 
 
 IF ~~ THEN BEGIN 12
-
 SAY ~I assume you have questions then?~
 +~BeenInParty("Sharteel")~+ ~Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed?~ GOTO 3
 ++ ~Hmm, you seem familiar. Have we met before?~ GOTO 7
@@ -111,8 +104,8 @@ SAY ~I assume you have questions then?~
 ++ ~Nevermind.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
-IF ~~ THEN BEGIN 13
 
+IF ~~ THEN BEGIN 13
 SAY ~I really don't know what you are talking about. Do you even know who I am?~
 +~BeenInParty("Sharteel")~+ ~Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed?~ GOTO 3
 ++ ~Hmm, you seem familiar. Have we met before?~ GOTO 7
@@ -122,7 +115,6 @@ END
 
 
 IF ~~ THEN BEGIN 14
-
 SAY ~I had hoped the Fist had picked at least an intelligent woman to interogate me. What a disappointment.
 
 I am the daughter of Angelo, one of the cohorts of Sarevok. The Fist have spread nothing but lies about me since the day they chained me here. This charade has been nothing more than guilt by blood and I shall have the head of those responsible.~
@@ -133,11 +125,12 @@ I am the daughter of Angelo, one of the cohorts of Sarevok. The Fist have spread
 ++ ~I've seen enough here. I'll be going now.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
-IF ~~ THEN BEGIN 15
 
+IF ~~ THEN BEGIN 15
 SAY ~Are you the dim-witted guard the Fist had no other use for? I have been stuck in this cell for weeks, fool, and I know nothing of any Caelar.~
 ++ ~Then why are you in here?~ GOTO 16
 END
+
 
 IF ~~ THEN BEGIN 16
 SAY ~I am here because I am the daughter of Angelo, one of the cohorts of Sarevok. The Fist captured me shortly after their deaths.~
@@ -147,8 +140,8 @@ SAY ~I am here because I am the daughter of Angelo, one of the cohorts of Sarevo
 ++ ~I've seen enough here. I'll be going now.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) ~ EXIT
 END
 
-IF ~~ THEN BEGIN 17
 
+IF ~~ THEN BEGIN 17
 SAY ~Crimes? There were no crimes. These *dogs* chained me here because I am the daughter of Angelo.~
 ++ ~Perhaps you gave them cause to think you are in some way responsible?~ GOTO 7
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ ~I don't really care why you are here. I'm heading north with the Fist to defeat Caelar. I could use you at my side.~ GOTO 11
@@ -167,9 +160,9 @@ END
 
 
 IF ~~ THEN BEGIN 19
-
 SAY ~As much as it pains me to think of myself working alongside a moron like you it still beats the smell of this place. Fine, I'll join your little group.~ IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",2) SetGlobal("k9SharTeelPrison","GLOBAL",1) SetGlobal("SharTeelJoined","GLOBAL",1) JoinParty()~ EXIT
 END
+
 
 IF ~~ THEN BEGIN 20
 SAY ~As for why, I imagine you'd best pester her. I don't know what you are talking about.~   IF ~~ GOTO 21
@@ -183,13 +176,61 @@ SAY ~Frankly, the last fool to interogate me had more wits to him. Surely the Fi
 ++ ~I think a few more days with the Fist might change your attitude.~ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
-IF ~~ THEN BEGIN 22
 
+IF ~~ THEN BEGIN 22
 SAY ~You're such a funny man! That's why I'm gonna kill you last.~ [SHART33] IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 IF ~~ THEN BEGIN 23
-
 SAY ~Enough of your questions. How would you like my sword tickling your innards?~ [SHART34] IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
+
+IF ~Global("SharTeelJoined", "GLOBAL", 1)~ THEN BEGIN Rejoin
+SAY ~I take it this means I'm through with you idiots?~
+
+	IF ~~ THEN REPLY ~Actually, on second thought I still require your services.~
+		DO ~SetGlobal("SharTeelJoined", "GLOBAL", 1) JoinParty()~ EXIT
+
+	IF ~~ THEN REPLY ~Your respect is endearing, truly, but now that I think about it I still have need of you.~
+		DO ~SetGlobal("SharTeelJoined", "GLOBAL", 1) JoinParty()~ EXIT
+
+	IF ~~ THEN
+	REPLY ~Yep.~ EXIT
+END
+
+IF ~!HappinessLT(Myself,UNHAPPY_ANGRY_BOUNDARY)
+Global("KickedOut","LOCALS",1)~ THEN BEGIN bdshartp0
+  SAY ~I take it this means I'm through with you idiots?~
+  IF ~~ THEN REPLY ~Yes, it's time to part ways.~ GOTO bdshartp2
+  IF ~~ THEN REPLY ~No, I made a mistake. Please stay.~ GOTO bdshartp1
+END
+
+IF ~~ THEN BEGIN bdshartp1
+  SAY ~I'm not here to play games <CHARNAME>.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0)
+JoinParty()
+~ EXIT
+END
+
+IF ~~ THEN BEGIN bdshartp2
+  SAY ~Finally.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)
+~ EXIT
+END
+
+IF ~HappinessLT(Myself,UNHAPPY_ANGRY_BOUNDARY)~ THEN BEGIN bdshartp3
+  SAY ~I've had just about enough of this crap. Our business here is done.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)
+ChangeAIScript("",DEFAULT)
+EscapeArea()
+~ EXIT
+END
+
+IF ~!HappinessLT(Myself,UNHAPPY_ANGRY_BOUNDARY)
+Global("KickedOut","LOCALS",0)~ THEN BEGIN bdshartp4
+  SAY ~I'm tired of dealing with idiots.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)
+ChangeAIScript("",DEFAULT)
+~ EXIT
+END

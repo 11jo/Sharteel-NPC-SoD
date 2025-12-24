@@ -1,10 +1,15 @@
-BEGIN Bk9shart
-
-CHAIN IF ~InParty("Sharteel")  InParty("Edwin")
+CHAIN IF ~InParty("Sharteel")
+!StateCheck("Sharteel",CD_STATE_NOTVALID) 
+InParty("Edwin")
+!StateCheck("Edwin",CD_STATE_NOTVALID) 
 See("Edwin")
 See("Sharteel")
+ActionListEmpty()
 !ActuallyInCombat()
-Global("k9SharteelEdwin","GLOBAL",1) GlobalGT("BD_Plot","GLOBAL",0) !AreaCheck("BD0120") !AreaCheck("BD0130")~ THEN bdshartj k9SharteelEdwin1
+Global("k9SharteelEdwin","GLOBAL",1)
+GlobalGT("BD_Plot","GLOBAL",0)
+!AreaCheck("BD0120")
+!AreaCheck("BD0130")~ THEN bdshartj k9SharteelEdwin1
 ~Strange, I remembered you to be far more competent. Clearly I was mistaken.~
 DO ~SetGlobal("k9SharteelEdwin","GLOBAL",2)~
 == BDEDWINJ ~(Were <CHARNAME> not likely to intervene I'd turned this woman inside out) I see you are still alive, Shar-Teel... what a pity.~
@@ -14,22 +19,30 @@ EXIT
 
 
 
-CHAIN IF ~InParty("Sharteel")  InParty("Corwin")
+CHAIN IF ~InParty("Sharteel")
+!StateCheck("Sharteel",CD_STATE_NOTVALID) 
+InParty("Corwin")
+!StateCheck("Corwin",CD_STATE_NOTVALID) 
 See("Corwin")
 See("Sharteel")
+ActionListEmpty()
 !ActuallyInCombat()
-Global("k9SharteelCorwin","GLOBAL",1)  ~ THEN bdshartj k9SharteelCorwin1
+Global("k9SharteelCorwin","GLOBAL",1)~ THEN bdshartj k9SharteelCorwin1
 ~A single mother who continues to serve the whims of the men around her. Tell me Corwin, when you joined the Flaming Fist did you forgo all of your dignity? Or has a tiny spark remained?~
 DO ~SetGlobal("k9SharteelCorwin","GLOBAL",2)~
 == BDCORWIJ ~<CHARNAME> may be willing to take your insults. I won't. Best you be mindful of that.~
 EXIT
 
 
-CHAIN IF ~InParty("Sharteel")  InParty("Corwin")
+CHAIN IF ~InParty("Sharteel")
+!StateCheck("Sharteel",CD_STATE_NOTVALID) 
+InParty("Corwin")
+!StateCheck("Corwin",CD_STATE_NOTVALID) 
 See("Corwin")
 See("Sharteel")
+ActionListEmpty()
 !ActuallyInCombat()
-Global("k9SharteelCorwin","GLOBAL",3)  ~ THEN bdshartj k9SharteelCorwin2
+Global("k9SharteelCorwin","GLOBAL",3)~ THEN bdshartj k9SharteelCorwin2
 ~Still chained to your Flaming Fist masters? Really, Corwin, I expected better of you.~
 DO ~SetGlobal("k9SharteelCorwin","GLOBAL",4)~
 == BDCORWIJ ~The Flaming Fist has the respect of much of the Sword Coast. Not that you know anything about respect.~
@@ -37,11 +50,16 @@ DO ~SetGlobal("k9SharteelCorwin","GLOBAL",4)~
 EXIT
 
 
-CHAIN IF ~InParty("Sharteel")  InParty("Dynaheir")
+CHAIN IF ~InParty("Sharteel")
+!StateCheck("Sharteel",CD_STATE_NOTVALID) 
+InParty("Dynaheir")
+!StateCheck("Dynaheir",CD_STATE_NOTVALID) 
 See("Dynaheir")
 See("Sharteel")
-!ActuallyInCombat()   InParty("Minsc")
-Global("k9SharteelDynaheir","GLOBAL",1)  ~ THEN bdshartj k9SharteelDynaheir1
+ActionListEmpty()
+!ActuallyInCombat()
+InParty("Minsc")
+Global("k9SharteelDynaheir","GLOBAL",1)~ THEN bdshartj k9SharteelDynaheir1
 ~You are a smarter than I expected, Dynaheir.~
 DO ~SetGlobal("k9SharteelDynaheir","GLOBAL",2)~
 == BDDynahj ~What exactly is thou saying?~
@@ -51,26 +69,32 @@ EXIT
 
 
 
-CHAIN IF ~InParty("Sharteel")  InParty("MKHIIN")
+CHAIN IF ~InParty("Sharteel")
+!StateCheck("Sharteel",CD_STATE_NOTVALID) 
+InParty("MKHIIN")
+!StateCheck("MKHIIN",CD_STATE_NOTVALID) 
 See("Mkhiin")
 See("Sharteel")
+ActionListEmpty()
 !ActuallyInCombat()
-Global("k9SharteelMkhiin","GLOBAL",1)  ~ THEN bdshartj k9SharteelMKHIIN1
+Global("k9SharteelMkhiin","GLOBAL",1)~ THEN bdshartj k9SharteelMKHIIN1
 ~Now what made you crawl out of your little hole.~
 DO ~SetGlobal("k9SharteelMkhiin","GLOBAL",2)~
 == BDMKHIIJ ~Goblins don't dig many holes. Mostly use caverns. Not much point in digging out what's been dug.~
 EXIT
 
-
-
 CHAIN IF ~InParty("Sharteel")  
+!StateCheck("Sharteel",CD_STATE_NOTVALID) 
 InParty("Jaheira")
+!StateCheck("Jaheira",CD_STATE_NOTVALID) 
 InParty("Khalid")
+!StateCheck("Khalid",CD_STATE_NOTVALID) 
 See("Khalid")
 See("Jaheira")
 See("Sharteel")
+ActionListEmpty()
 !ActuallyInCombat()
-Global("k9SharteelJaheira","GLOBAL",1)  ~ THEN bdshartj k9SharteelJaheira1
+Global("k9SharteelJaheira","GLOBAL",1)~ THEN bdshartj k9SharteelJaheira1
 ~Jaheira, my dear, why keep that stuttering idiot around?~
 DO ~SetGlobal("k9SharteelJaheira","GLOBAL",2)~
 == BDJAHEIJ ~I could ask the same of you. Why *does* <CHARNAME> insist on keeping you around?~
@@ -78,18 +102,3 @@ DO ~SetGlobal("k9SharteelJaheira","GLOBAL",2)~
 == BDJAHEIJ ~You will watch your tongue lest I rip it from your mouth!~
 = ~I'll not have you speak of Khalid any further. I swear, I do not understand *what* <CHARNAME> sees in you.~
 EXIT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
