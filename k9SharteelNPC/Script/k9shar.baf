@@ -36,8 +36,8 @@ IF
 	!AreaCheck("BD0102")
 THEN
 	RESPONSE #100
-		StartDialogNoSet([PC])
 		SetGlobal("k9Sharteel_Talk_ELTAN22","GLOBAL",1)
+		StartDialogNoSet([PC])
 END
 
 

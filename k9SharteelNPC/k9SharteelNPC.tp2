@@ -1,9 +1,10 @@
-BACKUP ~k9SharteelNPC/Backup~
+BACKUP ~weidu_external/k9SharteelNPC/Backup~
 AUTHOR ~elminster (elminster.sage@gmail.com)~
 
 // README ~k9SharteelNPC/~
 
 VERSION ~v1.5~
+
 /*
 ALWAYS
 
@@ -22,7 +23,7 @@ LANGUAGE
 BEGIN @99971
 DESIGNATED 0
 LABEL ~k9SHarteel-SoD~
-REQUIRE_PREDICATE GAME_INCLUDES ~SoD~ ~This mod is for SoD~
+REQUIRE_PREDICATE GAME_INCLUDES ~SoD~ @51 /* This mod is for SoD */
 
 
 //creature files
@@ -49,6 +50,12 @@ COPY ~k9SHarteelNPC\CRE\k9narlen.cre~ ~override~
 	COMPILE ~k9SHarteelNPC\dialog\bdsharte.d~
 	COMPILE ~k9SHarteelNPC\dialog\bdshartj.d~
 	COMPILE ~k9SHarteelNPC\dialog\bdshartp.d~
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDSHARTB.dlg~) BEGIN
+	COMPILE ~k9SHarteelNPC\dialog\BDSHARTB.d~
+END
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDEDWINB.dlg~) BEGIN
+	COMPILE ~k9SHarteelNPC\dialog\BDEDWINB.d~
+END
 	COMPILE ~k9SHarteelNPC\dialog\bbdshart.d~
 	COMPILE ~k9SHarteelNPC\dialog\bk9shart.d~
 	COMPILE ~k9SHarteelNPC\dialog\k9bdelta.d~
@@ -157,9 +164,9 @@ ACTION_IF  GAME_IS ~eet~ BEGIN
 			// override_ToB = "k9shar"		// override script of your NPC (ToB) //name of the override NPC script in ToB (use SoA one if doesn't exist)
 			// dialog_ToB = ""		// joining dialogue for ToB//name of the dialogue file used after spawning NPC in ToB (use SoA POST dialogue or initial SoA dialogue file if doesn't exist)
 			cre_ToB = "k9SHARTE"			//if type = 4 and/or default_ToB = 1 name of the ToB CRE file is needed (used to create new CRE rather than migrating existing one from SoA)
-//			traFile = EVAL "weidu_external/sbs/languages/autotra/%s/setup.tra"  //an optional TRA file that will be used for the TRA references defined in "string"
-			string = "~Bring me Shar-Teel, the fighter.~"					//FATESP summon text (example: "Bring me Quayle, the gnome cleric/illusionist.") or TRA string number
-			stringPosDV = "SharTeel"			//set the DV of NPC right below your response (used for sorting FATESP responses alphabetically)
+			traFile = EVAL "k9SHarteelNPC/TRA/%s/k9setup.tra"  //an optional TRA file that will be used for the TRA references defined in "string"
+			string = "@52"					//FATESP summon text (example: "Bring me Quayle, the gnome cleric/illusionist.") or TRA string number
+			stringPosDV = "Safana"			//set the DV of NPC right below your response (used for sorting FATESP responses alphabetically)
 											//Aerie, Ajantis, Alora, Anomen, Baeloth, Branwen, Cernd, Coran, Corwin, Dorn, Dynaheir, Edwin, Eldoth, Faldorn, Garrick,
 											//Glint, HaerDalis, Hexxat, Imoen2, Jaheira, Jan, Kagain, Keldorn, Khalid, Kivan, Korgan, MKhiin, Mazzy, Minsc, Montaron,
 											//Nalia, Neera, Quayle, Rasaad, Safana, SharTeel, Skie, Tiax, Valygar, Viconia, Voghiln, Wilson, Xan, Xzar, Yeslick, Yoshimo

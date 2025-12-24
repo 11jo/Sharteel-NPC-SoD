@@ -4,6 +4,6 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		SetGlobal("bd_sharteel_party_epilogue","global",1)
-		ActionOverride("sharteel",LeaveParty())
 		ActionOverride("sharteel",DestroyAllFragileEquipment(ADAMANTINE))
+		ActionOverride("sharteel",LeaveParty())
 END

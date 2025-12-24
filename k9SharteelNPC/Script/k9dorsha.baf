@@ -23,8 +23,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("k9SharteelDorn","GLOBAL",1)
-		StartDialogueNoSet([PC])
 		RealSetGlobalTimer("k9SharteelDornTalk","GLOBAL",1200)
+		StartDialogueNoSet([PC])
 END
 
 
