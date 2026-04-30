@@ -18,6 +18,10 @@ LANGUAGE
 		~English~
 		~k9SHarteelNPC/tra/English/k9Setup.tra~
 
+		~Simplified Chinese~
+		~schinese~
+		~k9SHarteelNPC/tra/schinese/k9Setup.tra~
+
 //Shar Teel
 
 BEGIN @99971
