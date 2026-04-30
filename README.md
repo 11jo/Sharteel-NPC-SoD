@@ -20,3 +20,18 @@
 
 [Link to original Mod Download](https://www.shsforums.net/files/file/1164-sharteel-npc-mod-for-sod/)
 
+---
+
+Version History:
+
+-October 2, 2020 - Version 1.4
+	Initial Release
+
+- January, 2026 - Version 1.5
+	Traification  
+	EET compatibility  
+	Label  
+	WeiduModPackager  
+	ini  
+
+

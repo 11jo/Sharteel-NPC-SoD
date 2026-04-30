@@ -27,42 +27,42 @@ REQUIRE_PREDICATE GAME_INCLUDES ~SoD~ @51 /* This mod is for SoD */
 
 
 //creature files
-COPY ~k9SHarteelNPC\CRE\k9sharte.cre~ ~override~
+COPY ~k9SHarteelNPC/CRE/k9sharte.cre~ ~override~
 
-COPY ~k9SHarteelNPC\CRE\k9sodfis.cre~ ~override~
+COPY ~k9SHarteelNPC/CRE/k9sodfis.cre~ ~override~
 
-COPY ~k9SHarteelNPC\CRE\k9narlen.cre~ ~override~
+COPY ~k9SHarteelNPC/CRE/k9narlen.cre~ ~override~
 
 
 //scripts
-		EXTEND_TOP ~bd0020.bcs~ ~k9SHarteelNPC\script\k9narspa.baf~
-		EXTEND_TOP ~bd0104.bcs~ ~k9SHarteelNPC\script\k9sharte.baf~
-		EXTEND_TOP ~bdcut61.bcs~ ~k9SHarteelNPC\script\k9final2.baf~
- 
-	COMPILE ~k9SHarteelNPC\script\k9shar.baf~
-	COMPILE ~k9SHarteelNPC\script\k9narlen.baf~
+		EXTEND_TOP ~bd0020.bcs~ ~k9SHarteelNPC/script/k9narspa.baf~
+		EXTEND_TOP ~bd0104.bcs~ ~k9SHarteelNPC/script/k9sharte.baf~
+		EXTEND_TOP ~bdcut61.bcs~ ~k9SHarteelNPC/script/k9final2.baf~
 
-		EXTEND_BOTTOM ~bdCORWIN.bcs~ ~k9SHarteelNPC\script\k9corsha.baf~
-		EXTEND_BOTTOM ~bdDORN.bcs~ ~k9SHarteelNPC\script\k9dorsha.baf~
- 
+	COMPILE ~k9SHarteelNPC/script/k9shar.baf~
+	COMPILE ~k9SHarteelNPC/script/k9narlen.baf~
+
+		EXTEND_BOTTOM ~bdCORWIN.bcs~ ~k9SHarteelNPC/script/k9corsha.baf~
+		EXTEND_BOTTOM ~bdDORN.bcs~ ~k9SHarteelNPC/script/k9dorsha.baf~
+
 
  //Dialog
-	COMPILE ~k9SHarteelNPC\dialog\bdsharte.d~
-	COMPILE ~k9SHarteelNPC\dialog\bdshartj.d~
-	COMPILE ~k9SHarteelNPC\dialog\bdshartp.d~
+	COMPILE ~k9SHarteelNPC/dialog/bdsharte.d~
+	COMPILE ~k9SHarteelNPC/dialog/bdshartj.d~
+	COMPILE ~k9SHarteelNPC/dialog/bdshartp.d~
 ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDSHARTB.dlg~) BEGIN
-	COMPILE ~k9SHarteelNPC\dialog\BDSHARTB.d~
+	COMPILE ~k9SHarteelNPC/dialog/BDSHARTB.d~
 END
 ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDEDWINB.dlg~) BEGIN
-	COMPILE ~k9SHarteelNPC\dialog\BDEDWINB.d~
+	COMPILE ~k9SHarteelNPC/dialog/BDEDWINB.d~
 END
-	COMPILE ~k9SHarteelNPC\dialog\bbdshart.d~
-	COMPILE ~k9SHarteelNPC\dialog\bk9shart.d~
-	COMPILE ~k9SHarteelNPC\dialog\k9bdelta.d~
-	COMPILE ~k9SHarteelNPC\dialog\k9sodfis.d~
-	COMPILE ~k9SHarteelNPC\dialog\k9sodnar.d~
-	COMPILE ~k9SHarteelNPC\dialog\bk9corsh.d~
-	COMPILE ~k9SHarteelNPC\dialog\bk9dorsh.d~
+	COMPILE ~k9SHarteelNPC/dialog/bbdshart.d~
+	COMPILE ~k9SHarteelNPC/dialog/bk9shart.d~
+	COMPILE ~k9SHarteelNPC/dialog/k9bdelta.d~
+	COMPILE ~k9SHarteelNPC/dialog/k9sodfis.d~
+	COMPILE ~k9SHarteelNPC/dialog/k9sodnar.d~
+	COMPILE ~k9SHarteelNPC/dialog/bk9corsh.d~
+	COMPILE ~k9SHarteelNPC/dialog/bk9dorsh.d~
 
 //stores
 
@@ -75,7 +75,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~BDBANTER.2DA~) BEGIN
 	APPEND ~BDBANTER.2DA~ ~SHARTEEL           BDSHARTB~ UNLESS ~SHARTEEL~
 	APPEND ~BDBANTER.2DA~ ~EDWIN           BDEDWINB~ UNLESS ~EDWIN~
 
-END ELSE BEGIN // SoD does not ship with a BDBanter.2DA file, but does reference it (from CAMPAIGN.2DA), so create it (code adapted from EET implementation by K4thos) 
+END ELSE BEGIN // SoD does not ship with a BDBanter.2DA file, but does reference it (from CAMPAIGN.2DA), so create it (code adapted from EET implementation by K4thos)
 
 <<<<<<<< .../k9-inlined/BDBANTER.2DA
 2DA      V1.0
@@ -132,13 +132,13 @@ COPY_EXISTING ~BD0103.are~ ~override/BD0103.are~
 	END
 
 
-COPY ~k9SHarteelNPC\ITM\k9eltlet.itm~ ~override~
+COPY ~k9SHarteelNPC/ITM/k9eltlet.itm~ ~override~
 	SAY NAME1 @99990122
 	SAY NAME2 @99990122
 	SAY UNIDENTIFIED_DESC  @99990123
 	SAY DESC @99990123
 
-COPY ~k9SHarteelNPC\ITM\k9eltle2.itm~ ~override~
+COPY ~k9SHarteelNPC/ITM/k9eltle2.itm~ ~override~
 	SAY NAME1 @99990124
 	SAY NAME2 @99990124
 	SAY UNIDENTIFIED_DESC  @99990125
@@ -148,7 +148,7 @@ COPY ~k9SHarteelNPC\ITM\k9eltle2.itm~ ~override~
 /* ------------- *
  *  Fate Spirit  *
  * ------------- */
- 
+
 ACTION_IF  GAME_IS ~eet~ BEGIN
 	INCLUDE ~EET/other/EET_functions.tph~   // functions from EET mod
 	LAF ~EET_NPC_TRANSITION~
