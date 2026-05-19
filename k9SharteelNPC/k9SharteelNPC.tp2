@@ -13,14 +13,17 @@ END // ALWAYS
 
 AUTO_TRA ~k9SHarteelNPC/tra/%s~
 
-LANGUAGE
-		~English~
-		~English~
-		~k9SHarteelNPC/tra/English/k9Setup.tra~
+LANGUAGE ~English~
+		 ~English~
+		 ~k9SHarteelNPC/tra/English/k9Setup.tra~
 
-		~Simplified Chinese~
-		~schinese~
-		~k9SHarteelNPC/tra/schinese/k9Setup.tra~
+LANGUAGE ~Simplified Chinese~
+		 ~schinese~
+		 ~k9SHarteelNPC/tra/schinese/k9Setup.tra~
+
+LANGUAGE ~Polish (by Aristo)~
+		 ~polish~
+		 ~k9SHarteelNPC/tra/polish/k9Setup.tra~
 
 //Shar Teel
 

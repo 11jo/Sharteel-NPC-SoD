@@ -1,0 +1,45 @@
+@51   = ~Modyfikacja dla dodatku Siege of Dragonspear~
+@52   = ~Przywołaj Shar-Teel, wojowniczkę.~
+
+@99971=~Shar-Teel NPC Mod~
+
+@665564=~Porozmawiać z Shar-Teel~
+
+@665565=~Porozmawiać z Shar-Teel
+
+Książę Eltan zasugerował, że jeśli chcę się czegoś dowiedzieć o planach Angela i o pozostałych zwolennikach Sarevoka, mogę porozmawiać z Shar-Teel, córką Angela. Można ją znaleźć we wschodniej części kwatery głównej Płomiennej Pięści.~
+
+@665566=~Porozmawiać z Shar-Teel
+
+Shar-Teel zgodziła się dołączyć do mojej drużyny.~
+
+@665567=~Porozmawiać z Shar-Teel
+
+Zważywszy na powiązania Shar-Teel z Angelo, książę Eltan z pewnością nie zgodzi się jej uwolnić. Muszę znaleźć coś, co przekona strażnika, by wypuścił ją z celi. Być może Gildia Złodziei mogłaby okazać się tu pomocna. Na pewno mają w pobliżu Czarodziejskich Rozmaitości kogoś, z kim mogę porozmawiać.~
+
+@665568=~Porozmawiać z Shar-Teel
+
+W zamian za 100 sztuk złota Narlen obiecał dostarczyć mi sfałszowany list, który posłuży do uwolnienia Shar-Teel. W tym celu będzie jednak potrzebował oficjalnego pergaminu z kancelarii książęcej. Sprawdzę w Pałacu, czy uda się coś takiego znaleźć.~
+
+@665569=~Porozmawiać z Shar-Teel
+
+Narlen dał mi sfałszowany list. Pozostaje tylko przekonać strażnika, by wypuścił Shar-Teel.~
+
+@665570=~Porozmawiać z Shar-Teel
+
+Shar-Teel otrzymała propzycję dołączenia do drużyny, a także obietnicę, że zrobię wszystko, co w mojej mocy, by wydobyć ją z więzienia.~
+
+@665571=~Porozmawiać z Shar-Teel
+
+Cały ekwipunek Shar-Teel został sprzedany. Strażnik wydał nam tylko podstawowe wyposażenie.~
+
+
+@99990122=~Czysty pergamin~
+@99990123=~Jest to czysty kawałek pergaminu opatrzony insygniami Wielkich Książąt.~
+
+@99990124=~List do straży więzienia~
+@99990125=~<DAYANDMONTH>, 1368,
+
+Postanawia się, że Shar-Teel Dosan zostaje z dniem dzisiejszym zwolniona z więzienia, a opiekę nad nią ma objąć <CHARNAME>. On<PRO_HESHE> też przedstawi straży więziennej dalsze szczegóły dotyczące wykonania tego postanowienia. Proszę dopilnować, aby rozkaz ten został wykonany jak najsprawniej i bez zbędnej zwłoki.
+
+– Książę Eltan~
