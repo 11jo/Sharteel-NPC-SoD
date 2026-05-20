@@ -4,7 +4,7 @@
 [![Published](https://img.shields.io/github/release-date-pre/The-Gate-Project/Sharteel-NPC-SoD?display_date=published_at&label=published&color=014a69)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/The-Gate-Project/Sharteel-NPC-SoD/total?color=41788a)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
 
-[![Language](https://img.shields.io/badge/language-english-014a69)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
+[![Language](https://img.shields.io/badge/language-english%20%7C%20schinese-014a69)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
 [![Games](https://img.shields.io/badge/games-SoD%20%a0%20EET-41788a)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
 
 <!--
@@ -24,10 +24,11 @@
 
 Version History:
 
--October 2, 2020 - Version 1.4
+- October 2, 2020 - Version 1.4
 	Initial Release
 
 - January, 2026 - Version 1.5
+	Simplified Chinese by MephistoSatanDevil  
 	Traification  
 	EET compatibility  
 	Label  

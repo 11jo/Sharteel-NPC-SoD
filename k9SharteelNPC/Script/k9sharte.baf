@@ -1,12 +1,16 @@
 IF 
 	Global("k9sharteelspawn","GLOBAL",0)
 	!BeenInParty("Sharteel")
+	!Dead("sharteel")
 THEN 
 	RESPONSE #100
 		SetGlobal("k9sharteelspawn","GLOBAL",1)
+		SetGlobal("SoD_Sharteel","GLOBAL",1) // Block any dialog from BG1
 		Lock("Door06")
 		SetGlobal("BD_SPAWN_Sharteel","BD0104",1)
 		CreateCreature("k9sharte",[1225.307],SE)
+		SmallWait(1)
+		ActionOverride("k9sharte",MakeGlobal())
 		CreateCreature("k9sodfis",[1272.400],SE)
 END
 
@@ -14,9 +18,14 @@ END
 IF
 	Global("BD_SPAWN_Sharteel","BD0104",0)
 	BeenInParty("Sharteel")
+	!Dead("sharteel")
+	!InPartyAllowDead("sharteel")
+	!InParty("sharteel")
 THEN
 	RESPONSE #100
+		SetGlobal("SoD_Sharteel","GLOBAL",1) // Block any dialog from BG1
 		MoveGlobal("bd0104","sharteel",[1225.307])
+		SmallWait(1)
 		Lock("Door06")
 		CreateCreature("k9sodfis",[1272.400],SE)
 		ApplySpellRES("bdresurr","sharteel")

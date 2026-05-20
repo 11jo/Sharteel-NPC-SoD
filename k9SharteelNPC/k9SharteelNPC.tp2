@@ -13,17 +13,20 @@ END // ALWAYS
 
 AUTO_TRA ~k9SHarteelNPC/tra/%s~
 
-LANGUAGE ~English~
-		 ~English~
-		 ~k9SHarteelNPC/tra/English/k9Setup.tra~
+LANGUAGE
+		~English~
+		~English~
+		~k9SHarteelNPC/tra/English/k9Setup.tra~
 
-LANGUAGE ~Simplified Chinese~
-		 ~schinese~
-		 ~k9SHarteelNPC/tra/schinese/k9Setup.tra~
+LANGUAGE
+		~Simplified Chinese~
+		~schinese~
+		~k9SHarteelNPC/tra/schinese/k9Setup.tra~
 
-LANGUAGE ~Polish (by Aristo)~
-		 ~polish~
-		 ~k9SHarteelNPC/tra/polish/k9Setup.tra~
+LANGUAGE
+		~Polish (by Aristo)~
+		~polish~
+		~k9SHarteelNPC/tra/polish/k9Setup.tra~
 
 //Shar Teel
 
@@ -52,11 +55,41 @@ COPY ~k9SHarteelNPC/CRE/k9narlen.cre~ ~override~
 		EXTEND_BOTTOM ~bdCORWIN.bcs~ ~k9SHarteelNPC/script/k9corsha.baf~
 		EXTEND_BOTTOM ~bdDORN.bcs~ ~k9SHarteelNPC/script/k9dorsha.baf~
 
+// Adapted from Tipun IWD_EET_END (_new_npc_iwd.tph)
+	ACTION_FOR_EACH DLG IN SHARTE SHARTP SHARTJ SHARTD BSHART SHARTZ BDSHARTE BDSHARTJ BEGIN
+		ACTION_IF FILE_EXISTS_IN_GAME ~%DLG%.DLG~ THEN BEGIN
+			PRINT ~Sharteel %SOURCE_FILE% Exists~
+
+	OUTER_SPRINT ~state_trigger_add~ ~~
+COPY_EXISTING ~%DLG%.DLG~ ~override~
+		READ_LONG 0x08 states
+		READ_LONG 0x0c states_off
+		PATCH_IF ( states > 0 ) BEGIN
+			FOR ( i = 0 ; i < states ; ++i ) BEGIN
+				READ_LONG states_off + i * 0x10 + 0x0c trig_idx
+				PATCH_IF ( trig_idx >= 0 ) BEGIN
+					SPRINT ~state_trigger_add~ ~%i%~
+					INNER_ACTION BEGIN
+						COMPILE EVALUATE_BUFFER ~k9SharteelNPC/Dialog/SHART_PAST.d~
+							PATCH_PRINT ~... // ADD_STATE_TRIGGER : in %SOURCE_FILESPEC% state %trig_idx%
+							~
+					END
+				END
+			END
+		END
+		BUT_ONLY_IF_IT_CHANGES
+
+
+	END
+		END
+
 
  //Dialog
 	COMPILE ~k9SHarteelNPC/dialog/bdsharte.d~
 	COMPILE ~k9SHarteelNPC/dialog/bdshartj.d~
-	COMPILE ~k9SHarteelNPC/dialog/bdshartp.d~
+// 	COMPILE ~k9SHarteelNPC/dialog/bdshartp.d~ // Included in bdsharte.d //(Should be separated but it work 
+								// bdshartp.d should be in bdsharte.d as POST_DIALOG_FILE and the actual content of bdsharte.d should be in a separate dialog assigned to the SHARTEEL cre in k9sharte.baf)
+
 ACTION_IF (NOT FILE_EXISTS_IN_GAME ~BDSHARTB.dlg~) BEGIN
 	COMPILE ~k9SHarteelNPC/dialog/BDSHARTB.d~
 END

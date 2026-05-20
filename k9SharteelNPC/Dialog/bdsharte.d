@@ -1,187 +1,187 @@
-BEGIN bdsharte
+APPEND bdsharte
 
 
-IF ~Global("k9SharTeelPrison","GLOBAL",0)~ THEN BEGIN 0
+IF ~Global("k9SharTeelPrison","GLOBAL",0)~ THEN BEGIN bdsharte0
 
 SAY @300 /* What do we have here? */
-+~Global("k9shar_unlock_door","GLOBAL",1)~+ @301 /* I'll be brief. I'm heading up north with the Flaming Fist and I want you at my side. */ GOTO 11
-+~GlobalGT("k9eltanSharteelDiscovery","GLOBAL",1)~+ @302 /* I take it you are Shar-Teel? */ GOTO 18
-+~Gender(Player1Fill,FEMALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO 3
-+~Gender(Player1Fill,FEMALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO 4
-+~Gender(Player1Fill,MALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO 1
-+~Gender(Player1Fill,MALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO 5
-+~Gender(Player1Fill,MALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @304 /* Greetings Shar-Teel. Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO 1
-+~Gender(Player1Fill,MALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO 2
-+~Gender(Player1Fill,MALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO 2
-+~Gender(Player1Fill,FEMALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @304 /* Greetings Shar-Teel. Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO 3
-+~Gender(Player1Fill,FEMALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO 4
-+~Gender(Player1Fill,FEMALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO 4
++~Global("k9shar_unlock_door","GLOBAL",1)~+ @301 /* I'll be brief. I'm heading up north with the Flaming Fist and I want you at my side. */ GOTO bdsharte11
++~GlobalGT("k9eltanSharteelDiscovery","GLOBAL",1)~+ @302 /* I take it you are Shar-Teel? */ GOTO bdsharte18
++~Gender(Player1Fill,FEMALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO bdsharte3
++~Gender(Player1Fill,FEMALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO bdsharte4
++~Gender(Player1Fill,MALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO bdsharte1
++~Gender(Player1Fill,MALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @303 /* I take it you are Shar-Teel? Why are you in here? */ GOTO bdsharte5
++~Gender(Player1Fill,MALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @304 /* Greetings Shar-Teel. Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO bdsharte1
++~Gender(Player1Fill,MALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO bdsharte2
++~Gender(Player1Fill,MALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO bdsharte2
++~Gender(Player1Fill,FEMALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @304 /* Greetings Shar-Teel. Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO bdsharte3
++~Gender(Player1Fill,FEMALE) !BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO bdsharte4
++~Gender(Player1Fill,FEMALE) BeenInParty("Sharteel") GlobalLT("k9eltanSharteelDiscovery","GLOBAL",2)~+ @305 /* Another one of Caelar's peons I see. Tell me, when your lady sent her assassins what was she hoping to accomplish? */ GOTO bdsharte4
 END
 
-IF ~~ THEN BEGIN 1
+IF ~~ THEN BEGIN bdsharte1
 
 SAY @306 /* Ahh <CHARNAME>, if ever there were a male clung to the Fist it would be you. Tell me, did the Fist inform you at all of my whereabouts? I thought not. */ 
-++ @307 /* If Duke Eltan knew of your whereabouts he certainly didn't tell me. What crimes brought you here? */ GOTO 6
+++ @307 /* If Duke Eltan knew of your whereabouts he certainly didn't tell me. What crimes brought you here? */ GOTO bdsharte6
 END
 
 
-IF ~~ THEN BEGIN 2
+IF ~~ THEN BEGIN bdsharte2
 
-SAY @308 /* A quick and painful death. Is that not what an assassin is for? */ IF ~~ GOTO 20
+SAY @308 /* A quick and painful death. Is that not what an assassin is for? */ IF ~~ GOTO bdsharte20
 END
 
 
-IF ~~ THEN BEGIN 3
+IF ~~ THEN BEGIN bdsharte3
 
 SAY @309 /* Ahh <CHARNAME>, why am I not surprised to see you cowling before the Fist. Tell me, did the Fist inform you at all of my whereabouts? I thought not. */
-++ @310 /* If Duke Eltan knew your whereabouts he wasn't about to tell me. What crimes brought you here? */ GOTO 6
+++ @310 /* If Duke Eltan knew your whereabouts he wasn't about to tell me. What crimes brought you here? */ GOTO bdsharte6
 END
 
 
-IF ~~ THEN BEGIN 4
+IF ~~ THEN BEGIN bdsharte4
 
-SAY @311 /* Well, it seems the Fist have finally come to their senses. The look on Eltan's face must have been priceless. A woman sent to correct the mistakes of the men before her. */ IF ~~ GOTO 12
+SAY @311 /* Well, it seems the Fist have finally come to their senses. The look on Eltan's face must have been priceless. A woman sent to correct the mistakes of the men before her. */ IF ~~ GOTO bdsharte12
 END
 
 
-IF ~~ THEN BEGIN 5
-SAY @312 /* And just who would you be? There are so many boorish men surrounding me these days. */ IF ~~ GOTO 12
+IF ~~ THEN BEGIN bdsharte5
+SAY @312 /* And just who would you be? There are so many boorish men surrounding me these days. */ IF ~~ GOTO bdsharte12
 END
 
 
-IF ~~ THEN BEGIN 6
+IF ~~ THEN BEGIN bdsharte6
 
 SAY @313 /* Crimes? There were no crimes. These dogs chained me here because I am the daughter of Angelo. Nothing more. */
-++ @314 /* You always seemed the thieving sort. Perhaps that had a part to play in it. */ GOTO 8
-++ @315 /* Well you were challenging men to combat. Perhaps you embarrassed the wrong person. */ GOTO 10
+++ @314 /* You always seemed the thieving sort. Perhaps that had a part to play in it. */ GOTO bdsharte8
+++ @315 /* Well you were challenging men to combat. Perhaps you embarrassed the wrong person. */ GOTO bdsharte10
 END
 
 
-IF ~~ THEN BEGIN 7
+IF ~~ THEN BEGIN bdsharte7
 SAY @316 /* Enough of these questions. What do you want with me? */ 
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @317 /* I'd like you to join my party */ GOTO 11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @317 /* I'd like you to join my party */ GOTO bdsharte11
 ++ @318 /* Nothing really. Just wanted to see who you were. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) ~ EXIT
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",0)~+ @319 /* (Whisper) I can't risk talking too long to you about this, but I wish for you to join my group. I'll do what I can to get you released. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) AddJournalEntry(@665570,QUEST) ~ EXIT
 ++ @320 /* I've seen enough here. I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 8
+IF ~~ THEN BEGIN bdsharte8
 SAY @321 /* I do what needs to be done - something the Fist have never seemed to understand. */
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @322 /* That is precisely the reason I'd like you to join my party */ GOTO 11
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @323 /* I certainly have no taste for the Fist myself. They do seem to trust me however. Perhaps we can work together to undermine their efforts. */ GOTO 11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @322 /* That is precisely the reason I'd like you to join my party */ GOTO bdsharte11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @323 /* I certainly have no taste for the Fist myself. They do seem to trust me however. Perhaps we can work together to undermine their efforts. */ GOTO bdsharte11
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",0)~+ @319 /* (Whisper) I can't risk talking too long to you about this, but I wish for you to join my group. I'll do what I can to get you released. */ DO ~ SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) AddJournalEntry(@665570,QUEST)~ EXIT
 ++ @320 /* I've seen enough here. I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 9
+IF ~~ THEN BEGIN bdsharte9
 SAY @324 /* I am the daughter of Angelo, one of the cohorts of Sarevok. These pigs have kept me here for weeks without cause. Rest assured, whatever lies the Fist have spread of me are false. This charade has been nothing more than guilt by blood. */
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @325 /* Strange as it may sound, I understand. Join my group and you can be free of this place. */ GOTO 11
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @326 /* I dislike the Fist as much as you. They seem to trust me however. Perhaps we can work together to undermine their efforts. */ GOTO 11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @325 /* Strange as it may sound, I understand. Join my group and you can be free of this place. */ GOTO bdsharte11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @326 /* I dislike the Fist as much as you. They seem to trust me however. Perhaps we can work together to undermine their efforts. */ GOTO bdsharte11
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",0)~+ @319 /* (Whisper) I can't risk talking too long to you about this, but I wish for you to join my group. I'll do what I can to get you released. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) AddJournalEntry(@665570,QUEST)~ EXIT
 ++ @320 /* I've seen enough here. I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 10
+IF ~~ THEN BEGIN bdsharte10
 SAY @327 /* This town is full of princely little twats. I suppose I could have angered one of them. */
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @328 /* You waste your life away sitting in this cell. If you can stand the thought of working alongside the Fist come join my party. */ GOTO 11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @328 /* You waste your life away sitting in this cell. If you can stand the thought of working alongside the Fist come join my party. */ GOTO bdsharte11
 ++ @329 /* I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 11
+IF ~~ THEN BEGIN bdsharte11
 SAY @330 /* As much as it pains me to think of myself working alongside a moron like you it still beats the smell of this place. Fine, I'll join your little group. */ IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",2) SetGlobal("k9SharTeelPrison","GLOBAL",1) SetGlobal("SharTeelJoined","GLOBAL",1) JoinParty()~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 12
+IF ~~ THEN BEGIN bdsharte12
 SAY @331 /* I assume you have questions then? */
-+~BeenInParty("Sharteel")~+ @332 /* Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO 3
-++ @333 /* Hmm, you seem familiar. Have we met before? */ GOTO 7
-++ @334 /* What do you know of Caelar? */ GOTO 13
++~BeenInParty("Sharteel")~+ @332 /* Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO bdsharte3
+++ @333 /* Hmm, you seem familiar. Have we met before? */ GOTO bdsharte7
+++ @334 /* What do you know of Caelar? */ GOTO bdsharte13
 ++ @335 /* Nevermind. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 13
+IF ~~ THEN BEGIN bdsharte13
 SAY @336 /* I really don't know what you are talking about. Do you even know who I am? */
-+~BeenInParty("Sharteel")~+ @332 /* Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO 3
-++ @333 /* Hmm, you seem familiar. Have we met before? */ GOTO 7
-++ @337 /* You are one of the few prisoners here with their own guard. The Fist would not bother normally with so few resources at hand. What makes you so deserving of this honor? */ GOTO 9
++~BeenInParty("Sharteel")~+ @332 /* Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO bdsharte3
+++ @333 /* Hmm, you seem familiar. Have we met before? */ GOTO bdsharte7
+++ @337 /* You are one of the few prisoners here with their own guard. The Fist would not bother normally with so few resources at hand. What makes you so deserving of this honor? */ GOTO bdsharte9
 ++ @338 /* I think a few more days with the Fist might change your attitude. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 14
+IF ~~ THEN BEGIN bdsharte14
 SAY @339 /* I had hoped the Fist had picked at least an intelligent woman to interogate me. What a disappointment.
 
 I am the daughter of Angelo, one of the cohorts of Sarevok. The Fist have spread nothing but lies about me since the day they chained me here. This charade has been nothing more than guilt by blood and I shall have the head of those responsible. */
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @325 /* Strange as it may sound, I understand. Join my group and you can be free of this place. */ GOTO 11
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @326 /* I dislike the Fist as much as you. They seem to trust me however. Perhaps we can work together to undermine their efforts. */ GOTO 11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @325 /* Strange as it may sound, I understand. Join my group and you can be free of this place. */ GOTO bdsharte11
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @326 /* I dislike the Fist as much as you. They seem to trust me however. Perhaps we can work together to undermine their efforts. */ GOTO bdsharte11
 ++ @318 /* Nothing really. Just wanted to see who you were. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~  EXIT
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",0)~+ @319 /* (Whisper) I can't risk talking too long to you about this, but I wish for you to join my group. I'll do what I can to get you released. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) AddJournalEntry(@665570,QUEST)~ EXIT
 ++ @320 /* I've seen enough here. I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 15
+IF ~~ THEN BEGIN bdsharte15
 SAY @340 /* Are you the dim-witted guard the Fist had no other use for? I have been stuck in this cell for weeks, fool, and I know nothing of any Caelar. */
-++ @341 /* Then why are you in here? */ GOTO 16
+++ @341 /* Then why are you in here? */ GOTO bdsharte16
 END
 
 
-IF ~~ THEN BEGIN 16
+IF ~~ THEN BEGIN bdsharte16
 SAY @342 /* I am here because I am the daughter of Angelo, one of the cohorts of Sarevok. The Fist captured me shortly after their deaths. */
-++ @343 /* I'm not a member of the Fist. Why did they capture you? What crimes did you commit? */ GOTO 17
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @344 /* I don't really care why you are here. I'm heading north with the Fist to defeat Caelar. I could use you at my side. */ GOTO 11
+++ @343 /* I'm not a member of the Fist. Why did they capture you? What crimes did you commit? */ GOTO bdsharte17
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @344 /* I don't really care why you are here. I'm heading north with the Fist to defeat Caelar. I could use you at my side. */ GOTO bdsharte11
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",0)~+ @319 /* (Whisper) I can't risk talking too long to you about this, but I wish for you to join my group. I'll do what I can to get you released. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) AddJournalEntry(@665570,QUEST)~ EXIT
 ++ @320 /* I've seen enough here. I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) ~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 17
+IF ~~ THEN BEGIN bdsharte17
 SAY @345 /* Crimes? There were no crimes. These *dogs* chained me here because I am the daughter of Angelo. */
-++ @346 /* Perhaps you gave them cause to think you are in some way responsible? */ GOTO 7
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @344 /* I don't really care why you are here. I'm heading north with the Fist to defeat Caelar. I could use you at my side. */ GOTO 11
+++ @346 /* Perhaps you gave them cause to think you are in some way responsible? */ GOTO bdsharte7
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @344 /* I don't really care why you are here. I'm heading north with the Fist to defeat Caelar. I could use you at my side. */ GOTO bdsharte11
 +~Global("k9Sharteel_Guard_FREE","GLOBAL",0)~+ @319 /* (Whisper) I can't risk talking too long to you about this, but I wish for you to join my group. I'll do what I can to get you released. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) AddJournalEntry(@665570,QUEST)~ EXIT
 ++ @320 /* I've seen enough here. I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0) ~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 18
+IF ~~ THEN BEGIN bdsharte18
 SAY @347 /* Have the dim-witted Fist forgotten my name already? Why are you here? */
-+~Gender(Player1Fill,MALE)~+ @348 /* Duke Eltan seems to think you know something of other collaborators who assisted Angelo and Sarevok. What do you know of them? */ GOTO 22
-+~Gender(Player1Fill,FEMALE)~+ @348 /* Duke Eltan seems to think you know something of other collaborators who assisted Angelo and Sarevok. What do you know of them? */ GOTO 23
-+~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @349 /* I'm heading north with the Fist to defeat a threat to the city. I could use you at my side. */ GOTO 19
++~Gender(Player1Fill,MALE)~+ @348 /* Duke Eltan seems to think you know something of other collaborators who assisted Angelo and Sarevok. What do you know of them? */ GOTO bdsharte22
++~Gender(Player1Fill,FEMALE)~+ @348 /* Duke Eltan seems to think you know something of other collaborators who assisted Angelo and Sarevok. What do you know of them? */ GOTO bdsharte23
++~Global("k9Sharteel_Guard_FREE","GLOBAL",1)~+ @349 /* I'm heading north with the Fist to defeat a threat to the city. I could use you at my side. */ GOTO bdsharte19
 ++ @320 /* I've seen enough here. I'll be going now. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 19
+IF ~~ THEN BEGIN bdsharte19
 SAY @330 /* As much as it pains me to think of myself working alongside a moron like you it still beats the smell of this place. Fine, I'll join your little group. */ IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",2) SetGlobal("k9SharTeelPrison","GLOBAL",1) SetGlobal("SharTeelJoined","GLOBAL",1) JoinParty()~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 20
-SAY @350 /* As for why, I imagine you'd best pester her. I don't know what you are talking about. */   IF ~~ GOTO 21
+IF ~~ THEN BEGIN bdsharte20
+SAY @350 /* As for why, I imagine you'd best pester her. I don't know what you are talking about. */   IF ~~ GOTO bdsharte21
 END
 
-IF ~~ THEN BEGIN 21
+IF ~~ THEN BEGIN bdsharte21
 SAY @351 /* Frankly, the last fool to interogate me had more wits to him. Surely the Fist can do better. */
-+~BeenInParty("Sharteel")~+ @332 /* Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO 1
-++ @333 /* Hmm, you seem familiar. Have we met before? */ GOTO 7
-++ @337 /* You are one of the few prisoners here with their own guard. The Fist would not bother normally with so few resources at hand. What makes you so deserving of this honor? */ GOTO 9
++~BeenInParty("Sharteel")~+ @332 /* Wait, is that you Shar-Teel? Last time we spoke it seemed the dungeons of the Fist would be the last place I'd find you. What changed? */ GOTO bdsharte1
+++ @333 /* Hmm, you seem familiar. Have we met before? */ GOTO bdsharte7
+++ @337 /* You are one of the few prisoners here with their own guard. The Fist would not bother normally with so few resources at hand. What makes you so deserving of this honor? */ GOTO bdsharte9
 ++ @338 /* I think a few more days with the Fist might change your attitude. */ DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
 
-IF ~~ THEN BEGIN 22
+IF ~~ THEN BEGIN bdsharte22
 SAY @352 /* You're such a funny man! That's why I'm gonna kill you last. */ IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
-IF ~~ THEN BEGIN 23
+IF ~~ THEN BEGIN bdsharte23
 SAY @353 /* Enough of your questions. How would you like my sword tickling your innards? */ IF ~~ THEN DO ~SetGlobal("k9Sharteel_Talk","GLOBAL",0) SetGlobal("k9Sharteel_Talk_Talk","GLOBAL",0)~ EXIT
 END
 
@@ -234,3 +234,6 @@ Global("KickedOut","LOCALS",0)~ THEN BEGIN bdshartp4
 ChangeAIScript("",DEFAULT)
 ~ EXIT
 END
+
+END // APPEND
+
