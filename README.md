@@ -4,7 +4,7 @@
 [![Published](https://img.shields.io/github/release-date-pre/The-Gate-Project/Sharteel-NPC-SoD?display_date=published_at&label=published&color=014a69)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/The-Gate-Project/Sharteel-NPC-SoD/total?color=41788a)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
 
-[![Language](https://img.shields.io/badge/language-english%20%7C%20schinese-014a69)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
+[![Language](https://img.shields.io/badge/language-english%20%7C%20schinese%20%7C%20polish-014a69)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
 [![Games](https://img.shields.io/badge/games-SoD%20%a0%20EET-41788a)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
 
 <!--
@@ -14,7 +14,7 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%20%a0%20macOS%20%a0%20Linux%20%a0%20Project%20Infinity-014a69)](https://github.com/The-Gate-Project/Sharteel-NPC-SoD/releases)
 -->
 
-**Autor** : **Yellow hat Elminster**
+**Author** : **Yellow hat Elminster**
 
 [Link to original Mod Forum](https://www.shsforums.net/topic/59065-mod-sharteel-npc-mod-for-sod/)
 
@@ -24,15 +24,16 @@
 
 Version History:
 
-- October 2, 2020 - Version 1.4
-	Initial Release
+- October 2, 2020 : Version 1.4
+  - Initial Release
 
-- January, 2026 - Version 1.5
-	Simplified Chinese by MephistoSatanDevil  
-	Traification  
-	EET compatibility  
-	Label  
-	WeiduModPackager  
-	ini  
+- January, 2026 : Version 1.5
+  - Simplified Chinese by MephistoSatanDevil
+  - Polish translation by Aristo
+  - Traification
+  - EET compatibility
+  - Label
+  - WeiduModPackager
+  - ini
 
 

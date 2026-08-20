@@ -55,34 +55,6 @@ COPY ~k9SHarteelNPC/CRE/k9narlen.cre~ ~override~
 		EXTEND_BOTTOM ~bdCORWIN.bcs~ ~k9SHarteelNPC/script/k9corsha.baf~
 		EXTEND_BOTTOM ~bdDORN.bcs~ ~k9SHarteelNPC/script/k9dorsha.baf~
 
-// Adapted from Tipun IWD_EET_END (_new_npc_iwd.tph)
-	ACTION_FOR_EACH DLG IN SHARTE SHARTP SHARTJ SHARTD BSHART SHARTZ BDSHARTE BDSHARTJ BEGIN
-		ACTION_IF FILE_EXISTS_IN_GAME ~%DLG%.DLG~ THEN BEGIN
-			PRINT ~Sharteel %SOURCE_FILE% Exists~
-
-	OUTER_SPRINT ~state_trigger_add~ ~~
-COPY_EXISTING ~%DLG%.DLG~ ~override~
-		READ_LONG 0x08 states
-		READ_LONG 0x0c states_off
-		PATCH_IF ( states > 0 ) BEGIN
-			FOR ( i = 0 ; i < states ; ++i ) BEGIN
-				READ_LONG states_off + i * 0x10 + 0x0c trig_idx
-				PATCH_IF ( trig_idx >= 0 ) BEGIN
-					SPRINT ~state_trigger_add~ ~%i%~
-					INNER_ACTION BEGIN
-						COMPILE EVALUATE_BUFFER ~k9SharteelNPC/Dialog/SHART_PAST.d~
-							PATCH_PRINT ~... // ADD_STATE_TRIGGER : in %SOURCE_FILESPEC% state %trig_idx%
-							~
-					END
-				END
-			END
-		END
-		BUT_ONLY_IF_IT_CHANGES
-
-
-	END
-		END
-
 
  //Dialog
 	COMPILE ~k9SHarteelNPC/dialog/bdsharte.d~
@@ -110,12 +82,12 @@ END
 //DIALOG.2da
 	APPEND ~BDDIALOG.2da~ ~SHARTEEL           BDSHARTE           BDSHARTJ           SHARTD~ UNLESS ~SHARTEEL~
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~BDBANTER.2DA~) BEGIN
+	ACTION_IF (FILE_EXISTS_IN_GAME ~BDBANTER.2DA~) BEGIN
 
 	APPEND ~BDBANTER.2DA~ ~SHARTEEL           BDSHARTB~ UNLESS ~SHARTEEL~
 	APPEND ~BDBANTER.2DA~ ~EDWIN           BDEDWINB~ UNLESS ~EDWIN~
 
-END ELSE BEGIN // SoD does not ship with a BDBanter.2DA file, but does reference it (from CAMPAIGN.2DA), so create it (code adapted from EET implementation by K4thos)
+	END ELSE BEGIN // SoD does not ship with a BDBanter.2DA file, but does reference it (from CAMPAIGN.2DA), so create it (code adapted from EET implementation by K4thos)
 
 <<<<<<<< .../k9-inlined/BDBANTER.2DA
 2DA      V1.0

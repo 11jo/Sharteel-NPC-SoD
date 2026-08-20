@@ -1,36 +1,38 @@
 IF 
-	Global("k9sharteelspawn","GLOBAL",0)
+	Global("k9sharteelspawn","MYAREA",0)
 	!BeenInParty("Sharteel")
 	!Dead("sharteel")
 THEN 
 	RESPONSE #100
-		SetGlobal("k9sharteelspawn","GLOBAL",1)
-		SetGlobal("SoD_Sharteel","GLOBAL",1) // Block any dialog from BG1
+		SetGlobal("k9sharteelspawn","MYAREA",1)
 		Lock("Door06")
-		SetGlobal("BD_SPAWN_Sharteel","BD0104",1)
 		CreateCreature("k9sharte",[1225.307],SE)
 		SmallWait(1)
-		ActionOverride("k9sharte",MakeGlobal())
+		ActionOverride("sharteel",MakeGlobal())
 		CreateCreature("k9sodfis",[1272.400],SE)
+		Continue()
 END
 
 
 IF
-	Global("BD_SPAWN_Sharteel","BD0104",0)
-	BeenInParty("Sharteel")
+	Global("Continuous_SoD_sharteel","MYAREA",0)
+	OR(2)
+		BeenInParty("sharteel")
+		Exists("sharteel")
 	!Dead("sharteel")
 	!InPartyAllowDead("sharteel")
 	!InParty("sharteel")
+	!InMyArea("sharteel")
 THEN
 	RESPONSE #100
-		SetGlobal("SoD_Sharteel","GLOBAL",1) // Block any dialog from BG1
-		MoveGlobal("bd0104","sharteel",[1225.307])
-		SmallWait(1)
+		SetInterrupt(FALSE)
 		Lock("Door06")
 		CreateCreature("k9sodfis",[1272.400],SE)
+		SmallWait(1)
+		SetGlobal("Continuous_SoD_sharteel","MYAREA",1)
+		MoveGlobal("bd0104","sharteel",[1225.307])
 		ApplySpellRES("bdresurr","sharteel")
 		SmallWait(1)
-		ActionOverride("sharteel",Face(SE))
 		ApplySpellRES("bdrejuve","sharteel")
 		ChangeEnemyAlly("sharteel",NEUTRAL)
 		ChangeSpecifics("sharteel",ALLIES)
@@ -43,7 +45,8 @@ THEN
 		ActionOverride("sharteel",ChangeAIScript("",GENERAL))
 		ActionOverride("sharteel",ChangeAIScript("",DEFAULT))
 		ActionOverride("sharteel",SetDialog("BDsharte"))
-		SetGlobal("BD_SPAWN_Sharteel","BD0104",1)
+		ActionOverride("sharteel",Face(SE))
+		SetInterrupt(TRUE)
 		Continue()
 END
 
